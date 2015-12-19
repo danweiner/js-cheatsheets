@@ -348,28 +348,175 @@ Arrays
 
 
 
-function printList( list ) {
-  var listHTML = '<ol>';
-  for (var i = 0; i < list.length; i += 1) {
-    listHTML += '<li>' + list[i] + '</li>';
-  }
-  listHTML += '</ol>';
-  print(listHTML);
-}
+// function printList( list ) {
+//   var listHTML = '<ol>';
+//   for (var i = 0; i < list.length; i += 1) {
+//     listHTML += '<li>' + list[i] + '</li>';
+//   }
+//   listHTML += '</ol>';
+//   print(listHTML);
+// }
 
-function print(html) {
-  document.write(html);
-}
+// function print(html) {
+//   document.write(html);
+// }
 
-var 冶 = [];
-冶.push("厶", "口");
-冶.unshift("冫");
+// var 冶 = [];
+// 冶.push("厶", "口");
+// 冶.unshift("冫");
 
-printList (冶);
+// printList (冶);
 
-var 総 = ["糸", "公"];
-総.push("心");
-console.log(総);
+// var 総 = ["糸", "公"];
+// 総.push("心");
+// console.log(総);
+
+
+//removing items from arrays
+
+//.shift - remove from beginning
+//.pop - remove from end
+
+
+
+//using for loops with arrays
+
+// var students = ['s', 'l', 'j', 'p'];
+// for (var i = 0; i < students.length; i += 1) {
+// 	console.log(students[i]);
+// }
+
+
+// //printing an array as an ordered list
+// var playList = [
+//   'I Did It My Way',
+//   'Respect',
+//   'Imagine',
+//   'Born to Run',
+//   'Louie Louie',
+//   'Maybellene'
+// ];
+
+// function print(message) {
+//   document.write(message);
+// }
+
+// function printList(list) {
+// 	var listHTML = '<ol>';
+// 	for (var i = 0; i < list.length; i += 1) {
+// 		listHTML += '<li>' + list[i] + '</li>';
+// 	}
+// 	listHTML += '</ol>';
+// 	print(listHTML);
+// }
+
+// printList(playList);
+
+
+
+//useful array methods
+
+//.join 
+//.concat (add one list to another)
+//.indexOf (find if an item is in an array)
+
+// var inStock = [ 'apples', 'eggs', 'milk', 'cookies', 'cheese', 'bread', 'lettuce', 'carrot', 'broccoli', 'pizza', 'potato', 'crackers', 'onion', 'tofu', 'frozen dinner', 'cucumber'];
+// var search;
+
+// function print(message) {
+//   document.write( '<p>' + message + '</p>');
+// }
+
+// while(true) {
+// 	search = prompt("search our store.  type list, quit to exit");
+// 	search = search.toLowerCase();
+// 	if (search === "quit") {
+// 		break;
+// 	} else if (search === 'list') {
+// 		print( inStock.join(', '));
+// 	} else {
+// 		if (inStock.indexOf(search) > -1){
+// 		print('yes we have ' + search + ' in store');
+// 		} else {
+// 			print(search + ' is not in stock.');
+// 		}
+// 	}
+// }
+
+
+//two dimensional arrays
+
+// var playList = [
+//   ['I did it my way', 'Frank Sinatra'],
+//   ['Respect', 'Aretha Franklin'],
+//   ['Imagine', 'John Lennon']
+// ];
+
+// function print(message) {
+//   document.write(message);
+// }
+
+// function printSongs( songs ) {
+//   var listHTML = '<ol>';
+//   for ( var i = 0; i < songs.length; i += 1) {
+//     listHTML += '<li>' + songs[i][0] + ' by ' + songs[i][1] + '</li>';
+//   }
+//   listHTML += '</ol>';
+//   print(listHTML);
+// }
+
+// printSongs(playList);
+
+
+
+// Build a quiz using 2 dimensional arrays
+
+// var questions = [
+// 	['How many states?', 50],
+// 	['How many continents', 7],
+// 	['how many legs does an insect have', 6]
+// ]
+
+// var correctAnswers = 0;
+// var question;
+// var answer;
+// var response;
+// var correct = [];
+// var wrong = [];
+
+// function print(message) {
+//   var outputDiv = document.getElementById("output");
+//   outputDiv.innerHTML = message;
+// }
+
+// function buildList(arr) {
+// 	var listHTML = "<ol>";
+// 		for (var i = 0; i < arr.length; i += 1) {
+// 			listHTML += "<li>" + arr[i] + "</li>";
+// 		}
+// 		listHTML += "</ol>";
+// 		return listHTML;
+// }
+
+// for (var i =0; i < questions.length; i += 1) {
+// 	question = questions[i][0];
+// 	answer = questions[i][1];
+// 	response = parseInt(prompt(question));
+// 	if (response === answer) {
+// 		correctAnswers += 1;
+// 		correct.push(question);
+// 	} else {
+// 		wrong.push(question);
+// 	}
+// }
+// html = "You got " + correctAnswers + " question(s) right";
+// html += "<h2>You got these questions correct:</h2>";
+// html += buildList(correct);
+// html += "<h2>You got these questions wrong:</h2>";
+// html += buildList(wrong);
+// print(html);
+
+
 
 
 
@@ -383,10 +530,29 @@ Objects
 
 // console.log(冶1.components[0]);
 
+var person = {
+	name: "Dan",
+	country: "US",
+	age: 32,
+	TreehouseStudent: true,
+	skills: ["JavaScript", "HTML", "CSS"]
+}
 
 
+function print(message) {
+  var div = document.getElementById('output');
+  div.innerHTML = message;
+}
 
-
+var message = "<p> Hello. My name is " + person.name + "</p>";
+message += "<p>I live in the " + person.country + "</p>";
+person.name = "poopface";
+message += "<p>But, I wish my name was " + person.name + "</p>";
+person.age += 1;
+message += "<p>My age is now " + person.age + "</p>";
+message += "<p>I have " + person.skills.length + " skills: " ;
+message += person.skills.join(", ") + "</p>";
+print(message);
 
 
 
