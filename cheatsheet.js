@@ -530,35 +530,150 @@ Objects
 
 // console.log(冶1.components[0]);
 
-var person = {
-	name: "Dan",
-	country: "US",
-	age: 32,
-	TreehouseStudent: true,
-	skills: ["JavaScript", "HTML", "CSS"]
-}
+// var person = {
+// 	name: "Dan",
+// 	country: "US",
+// 	age: 32,
+// 	TreehouseStudent: true,
+// 	skills: ["JavaScript", "HTML", "CSS"]
+// }
 
+
+// function print(message) {
+//   var div = document.getElementById('output');
+//   div.innerHTML = message;
+// }
+
+// var message = "<p> Hello. My name is " + person.name + "</p>";
+// message += "<p>I live in the " + person.country + "</p>";
+// person.name = "poopface";
+// message += "<p>But, I wish my name was " + person.name + "</p>";
+// person.age += 1;
+// message += "<p>My age is now " + person.age + "</p>";
+// message += "<p>I have " + person.skills.length + " skills: " ;
+// message += person.skills.join(", ") + "</p>";
+// print(message);
+
+
+
+//for in loops
+
+// var person = {
+// 	name: "Dan",
+// 	country: "US",
+// 	age: 32,
+// 	TreehouseStudent: true,
+// 	skills: ["JavaScript", "HTML", "CSS"]
+// }
+
+// for (var prop in person) {
+// 	console.log(prop, ": ", person[prop]);
+// }
+
+
+//quiz revisited - arrays turned into objects
+
+// var questions = [
+//   {
+//   	question: 'How many states are in the United States?', 
+//   	answer: 50
+//   },
+//   {
+//   	question:'How many continents are there?', 
+//   	answer: 7
+//   },
+//   {
+//   	question: 'How many legs does an insect have?', 
+//   	answer: 6
+//   }
+// ];
+// var correctAnswers = 0;
+// var question;
+// var answer;
+// var response;
+
+// function print(message) {
+//   document.write(message);
+// }
+
+// for (var i = 0; i < questions.length; i += 1) {
+//   question = questions[i].question;
+//   answer = questions[i].answer;
+//   response = prompt(question);
+//   response = parseInt(response);
+//   if (response === answer) {
+//     correctAnswers += 1;
+//   } 
+// }
+
+// html = "You got " + correctAnswers + " question(s) right."
+// print(html);
+
+
+
+//Build an Object
+
+var students = [
+	{name: "Dan", 
+	track: "front-end",
+	achievements: 100,
+	points: 15000
+	},
+	{name: "Olivia", 
+	track: "back-end",
+	achievements: 300,
+	points: 16000
+	},
+	{name: "Sani", 
+	track: "iOS",
+	achievements: 200,
+	points: 10000
+	},
+	{name: "Jon", 
+	track: "front-end",
+	achievements: 150,
+	points: 20000
+	},
+	{name: "Dave", 
+	track: "Ruby",
+	achievements: 50,
+	points: 5000
+	}
+]
+
+var message = '';
+var student;
+var search;
 
 function print(message) {
-  var div = document.getElementById('output');
-  div.innerHTML = message;
+  var outputDiv = document.getElementById('output');
+  outputDiv.innerHTML = message;
 }
 
-var message = "<p> Hello. My name is " + person.name + "</p>";
-message += "<p>I live in the " + person.country + "</p>";
-person.name = "poopface";
-message += "<p>But, I wish my name was " + person.name + "</p>";
-person.age += 1;
-message += "<p>My age is now " + person.age + "</p>";
-message += "<p>I have " + person.skills.length + " skills: " ;
-message += person.skills.join(", ") + "</p>";
+function getStudentReport (student) {
+	var report = '<h2>Student: ' + student.name + '</h2>';
+	report += '<p>Track: ' + student.track + '</p>';
+	report += '<p>Points: ' + student.points + '</p>';
+	report += '<p>Achievements' + student.achievements + '</p>';
+	return report;
+}
+
+while(true) {
+	search = prompt('Search student records');
+	if(search  === null || search.toLowerCase() === 'quit') {
+		break;
+	}
+	for (var i = 0; i < students.length; i += 1) {
+	student = students[i];
+	if (student.name === search) {
+		message = getStudentReport(student);
+		print(message);
+	}
+	
+	}
+}
+
 print(message);
-
-
-
-
-
-
 
 
 
