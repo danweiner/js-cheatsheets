@@ -613,67 +613,67 @@ Objects
 
 //Build an Object
 
-var students = [
-	{name: "Dan", 
-	track: "front-end",
-	achievements: 100,
-	points: 15000
-	},
-	{name: "Olivia", 
-	track: "back-end",
-	achievements: 300,
-	points: 16000
-	},
-	{name: "Sani", 
-	track: "iOS",
-	achievements: 200,
-	points: 10000
-	},
-	{name: "Jon", 
-	track: "front-end",
-	achievements: 150,
-	points: 20000
-	},
-	{name: "Dave", 
-	track: "Ruby",
-	achievements: 50,
-	points: 5000
-	}
-]
+// var students = [
+// 	{name: "Dan", 
+// 	track: "front-end",
+// 	achievements: 100,
+// 	points: 15000
+// 	},
+// 	{name: "Olivia", 
+// 	track: "back-end",
+// 	achievements: 300,
+// 	points: 16000
+// 	},
+// 	{name: "Sani", 
+// 	track: "iOS",
+// 	achievements: 200,
+// 	points: 10000
+// 	},
+// 	{name: "Jon", 
+// 	track: "front-end",
+// 	achievements: 150,
+// 	points: 20000
+// 	},
+// 	{name: "Dave", 
+// 	track: "Ruby",
+// 	achievements: 50,
+// 	points: 5000
+// 	}
+// ]
 
-var message = '';
-var student;
-var search;
+// var message = '';
+// var student;
+// var search;
 
-function print(message) {
-  var outputDiv = document.getElementById('output');
-  outputDiv.innerHTML = message;
-}
+// function print(message) {
+//   var outputDiv = document.getElementById('output');
+//   outputDiv.innerHTML = message;
+// }
 
-function getStudentReport (student) {
-	var report = '<h2>Student: ' + student.name + '</h2>';
-	report += '<p>Track: ' + student.track + '</p>';
-	report += '<p>Points: ' + student.points + '</p>';
-	report += '<p>Achievements' + student.achievements + '</p>';
-	return report;
-}
+// function getStudentReport (student) {
+// 	var report = '<h2>Student: ' + student.name + '</h2>';
+// 	report += '<p>Track: ' + student.track + '</p>';
+// 	report += '<p>Points: ' + student.points + '</p>';
+// 	report += '<p>Achievements' + student.achievements + '</p>';
+// 	return report;
+// }
 
-while(true) {
-	search = prompt('Search student records');
-	if(search  === null || search.toLowerCase() === 'quit') {
-		break;
-	}
-	for (var i = 0; i < students.length; i += 1) {
-	student = students[i];
-	if (student.name === search) {
-		message = getStudentReport(student);
-		print(message);
-	}
+// while(true) {
+// 	search = prompt('Search student records');
+// 	if(search  === null || search.toLowerCase() === 'quit') {
+// 		break;
+// 	}
+// 	for (var i = 0; i < students.length; i += 1) {
+// 	student = students[i];
+// 	if (student.name === search) {
+// 		message = getStudentReport(student);
+// 		print(message);
+// 	}
 	
-	}
-}
+// 	}
+// }
 
-print(message);
+// print(message);
 
 
 
